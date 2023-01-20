@@ -44,7 +44,7 @@ public class GaussPodstawowy {
         double[] X = new double[n];
         for (int i = n - 1; i >= 0; i--) {
             if(A[i][i]==0){
-                throw new Exception ("\"A[i][i] jest rowne 0. Program konczy dzialanie. Uklad nie ma rozwiazania\"");
+                throw new Exception ("\"A[i][i] jest rowne 0. Program konczy dzialanie. Ukladu nie da sie rozwiazac ta metoda\"");
             }
             double sum = 0.0;
             for (int j = i + 1; j < n; j++) {
@@ -113,7 +113,7 @@ public class GaussPodstawowy {
         double[] X = new double[n];
         for (int i = n - 1; i >= 0; i--) {
             if(A[i][i]==0){
-                throw new Exception ("\"A[i][i] jest rowne 0. Program konczy dzialanie. Uklad nie ma rozwiazania\"");
+                throw new Exception ("\"A[i][i] jest rowne 0. Program konczy dzialanie. Ukladu nie da sie rozwiazac ta metoda\"");
             }
             double sum = 0.0;
             for (int j = i + 1; j < n; j++) {
