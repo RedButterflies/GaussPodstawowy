@@ -4,7 +4,7 @@ import static java.lang.Math.round;
 
 public class GaussPodstawowy {
 
-    public static void algorytm(){int wybor;
+    public static void algorytm() throws Exception {int wybor;
         Scanner wyborX = new Scanner(System.in);
         System.out.println("Wprowadz 1 any uzyc gotowych danych , 2 aby wprowadzic wlasne dane");
         wybor=wyborX.nextInt();
@@ -38,11 +38,14 @@ public class GaussPodstawowy {
                 for (int j = k; j < n; j++) {
                     A[i][j] -= wspolczynnik * A[k][j];
                 }
-            }
+            }if(A[k][k]==0){break;}
         }
 
         double[] X = new double[n];
         for (int i = n - 1; i >= 0; i--) {
+            if(A[i][i]==0){
+                throw new Exception ("\"A[i][i] jest rowne 0. Program konczy dzialanie. Uklad nie ma rozwiazania\"");
+            }
             double sum = 0.0;
             for (int j = i + 1; j < n; j++) {
                 sum += A[i][j] * X[j];
@@ -104,10 +107,14 @@ public class GaussPodstawowy {
                     A[i][j] -= wspolczynnik * A[k][j];
                 }
             }
+            if(A[k][k]==0){break;}
         }
 
         double[] X = new double[n];
         for (int i = n - 1; i >= 0; i--) {
+            if(A[i][i]==0){
+                throw new Exception ("\"A[i][i] jest rowne 0. Program konczy dzialanie. Uklad nie ma rozwiazania\"");
+            }
             double sum = 0.0;
             for (int j = i + 1; j < n; j++) {
                 sum += A[i][j] * X[j];
